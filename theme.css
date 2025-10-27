@@ -1,0 +1,601 @@
+/* ---------------------------------------------------- */
+/*                LIGHT – default :root                 */
+/* ---------------------------------------------------- */
+:root {
+    /* — Layer — */
+    --surface: #FFF0E5;
+    /* Neutral‑5  */
+    --level-1: #F9E7D9;
+    /* Neutral‑8  */
+    --level-2: #F2DFCE;
+    /* Neutral‑12 */
+    --alpha-invert: #FFFFFFCC;
+    --cta-error: #BA1A1A;
+
+    /* — Container — */
+    --container: #503A3A;
+    /* Neutral‑85 */
+    --container-success: #D2EC9F;
+    /* Neutral‑12 (green) */
+
+    /* — On‑layer — */
+    --on-primary: #503A3A;
+    /* text on light surface */
+    --on-secondary: #6A5552;
+    /* Neutral‑75 */
+    --on-tertiary: #9F8C81;
+    /* Neutral‑55 */
+    --on-inverse-primary: #FFFFFF;
+    /* text on dark surfaces */
+    --on-inverse-support: #D4C2B0;
+    /* Warm‑10     */
+    --on-disabled: #0000004D;
+    /* Black‑30    */
+    --on-container-green: #394E12;
+    /* Neutral‑12 (green) */
+    --on-layer-red: #FFFFFF;
+    --on-muted: #0000000D;
+    --on-level-10: #FFF7F2;
+    --input-bg: #FFFFFF;
+    --on-modal: #FFF0E5;
+    --on-premium: #E5DEFF;
+
+    /* — Buttons — */
+    --btn-primary: #7F524F;
+    /* Warm‑80     */
+    --btn-premium: #7F524F33;
+    /* Warm‑80     */
+    --btn-inverse: #FFC2A0;
+    /* Warm‑30     */
+    --btn-hover: #0000001A;
+    /* Black‑10    */
+    --btn-pressed: #00000033;
+    /* Black‑20    */
+    --btn-error: #844142;
+    --btn-on-secondary: #FFFFFF1A;
+    --btn-on-premium: #4835AB;
+
+    /* — Borders — */
+    --brd-primary: #00000033;
+    /* Black‑20    */
+    --brd-muted: #0000001A;
+    /* Black‑10    */
+    --brd-inverse-muted: #FFFFFF1A;
+    /* White‑10    */
+    --brd-container: #7F524F66;
+
+    --overlay-hover: rgba(50, 40, 39, 0.20);
+    /* #322827 @ 20% */
+    --overlay-pressed: rgba(50, 40, 39, 0.40);
+    /* #322827 @ 40% */
+
+    /* Container buttons (for use on dark surfaces) */
+    --overlay-container-hover: rgba(255, 255, 255, 0.15);
+    /* 15% white */
+    --overlay-container-pressed: rgba(255, 255, 255, 0.30);
+    /* 30% white */
+}
+
+/* --- TYPOGRAPHY --- */
+
+/* PP Fragment – Glare Light (300) */
+@font-face {
+    font-family: "PP Fragment";
+    src: url("assets/fonts/PPFragment-GlareLight.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* PP Fragment – Glare Regular (400) */
+@font-face {
+    font-family: "PP Fragment";
+    src: url("assets/fonts/PPFragment-GlareRegular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Zapf Humanist 601 — Regular (500) */
+@font-face {
+    font-family: "Zapf Humanist 601";
+    src: url("assets/fonts/Zapf-Humanist-601-Regular.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Nib Pro — SemiBold Italic */
+@font-face {
+    font-family: "Nib Pro";
+    src: url("assets/fonts/NibPro-SemiBoldItalic.woff2") format("woff2");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* --------------------------- */
+/*   CATEGORY HELPER CLASSES   */
+/* --------------------------- */
+
+/* SERIF */
+.font-serif-light {
+    font-family: var(--ff-fragment);
+    font-weight: var(--w-serif-light);
+}
+
+.font-serif-regular {
+    font-family: var(--ff-fragment);
+    font-weight: var(--w-serif-regular);
+}
+
+.font-serif-500 {
+    font-family: var(--ff-zapf);
+    font-weight: var(--w-serif-medium);
+}
+
+.font-serif-bold {
+    font-family: var(--ff-sans);
+    font-weight: var(--w-sans-bold);
+}
+
+/* REGULAR / SEMIBOLD / BOLD (Mulish) */
+.font-regular {
+    font-family: var(--ff-sans);
+    font-weight: var(--w-sans-regular);
+}
+
+.font-semibold {
+    font-family: var(--ff-sans);
+    font-weight: var(--w-sans-semibold);
+}
+
+.font-bold {
+    font-family: var(--ff-sans);
+    font-weight: var(--w-sans-bold);
+}
+
+.font-inverse-primary {
+    color: var(--on-inverse-primary);
+}
+
+.font-inverse-support {
+    color: var(--on-inverse-support);
+}
+
+/* ===================== */
+/*        SERIF          */
+/* ===================== */
+
+/* Title */
+.serif-title {
+    font-family: "Mulish", sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    /* 12px */
+    line-height: 1rem;
+    /* 16px */
+    letter-spacing: 0.15em;
+    /* 15% */
+    text-transform: uppercase;
+}
+
+/* Display Small */
+.serif-display-s {
+    font-family: "PP Fragment", serif;
+    font-weight: 400;
+    font-size: 3.75rem;
+    /* 60px */
+    line-height: 5rem;
+    /* 80px */
+    letter-spacing: 0;
+    margin: 0;
+}
+
+/* Heading L */
+.serif-heading-l {
+    font-family: "PP Fragment", serif;
+    font-weight: 300;
+    font-size: 3rem;
+    /* 48px */
+    line-height: 4rem;
+    /* 64px */
+    letter-spacing: 0;
+    min-width: 18rem;
+}
+
+/* Heading M */
+.serif-heading-m {
+    font-family: "PP Fragment", serif;
+    font-weight: 300;
+    font-size: 2.25rem;
+    /* 36px */
+    line-height: 3rem;
+    /* 48px */
+    letter-spacing: 0;
+}
+
+/* Heading S */
+.serif-heading-s {
+    font-family: "PP Fragment", serif;
+    font-weight: 300;
+    font-size: 1.6875rem;
+    /* 27px */
+    line-height: 2.625rem;
+    /* 42px */
+    letter-spacing: 0;
+    margin: 0;
+}
+
+/* Body L (serif) */
+.serif-body-l {
+    font-family: "Zapf Humanist 601", serif;
+    font-weight: 500;
+    font-size: 1.3125rem;
+    /* 21px */
+    line-height: 2rem;
+    /* 32px */
+    letter-spacing: 0;
+}
+
+/* ===================== */
+/*        REGULAR        */
+/* ===================== */
+
+.regular-body-l {
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-size: 1.3125rem;
+    /* 21px */
+    line-height: 2.125rem;
+    /* 34px */
+    letter-spacing: 0;
+}
+
+.regular-body-m {
+    font-family: "Mulish", sans-serif;
+    font-weight: 300;
+    font-size: 1.125rem;
+    /* 18px */
+    line-height: 1.75rem;
+    /* 28px */
+    letter-spacing: 0;
+    color: (var(--on-secondary))
+}
+
+.regular-body-s {
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    /* 16px */
+    line-height: 1.5rem;
+    /* 24px */
+    letter-spacing: 0;
+}
+
+.regular-caption-l {
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    /* 14px */
+    line-height: 1.25rem;
+    /* 20px */
+    letter-spacing: 0;
+}
+
+.regular-caption-m {
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    font-size: 0.750rem;
+    /* 12px */
+    line-height: 1.15rem;
+    /* 18px */
+    letter-spacing: 0;
+}
+
+
+/* ===================== */
+/*       SEMIBOLD        */
+/* ===================== */
+
+.semibold-heading-s {
+    font-family: "Mulish", sans-serif;
+    font-weight: 500;
+    font-size: 1.6875rem;
+    /* 27px */
+    line-height: 2.625rem;
+    /* 42px */
+    letter-spacing: 0;
+}
+
+.semibold-body-l {
+    font-family: "Mulish", sans-serif;
+    font-weight: 500;
+    font-size: 1.3125rem;
+    /* 21px */
+    line-height: 2.125rem;
+    /* 34px */
+    letter-spacing: 0;
+}
+
+.semibold-body-m {
+    font-family: "Mulish", sans-serif;
+    font-weight: 500;
+    font-size: 1.125rem;
+    /* 18px */
+    line-height: 1.75rem;
+    /* 28px */
+    letter-spacing: 0;
+    color: var(--on-primary);
+}
+
+.semibold-body-s {
+    font-family: "Mulish", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    /* 16px */
+    line-height: 1.5rem;
+    /* 24px */
+    letter-spacing: 0;
+}
+
+.semibold-caption-l {
+    font-family: "Mulish", sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    /* 14px */
+    line-height: 1.25rem;
+    /* 20px */
+    letter-spacing: 0;
+}
+
+.semibold-caption-m {
+    font-family: "Mulish", sans-serif;
+    font-weight: 500;
+    font-size: 0.75rem;
+    /* 12px */
+    line-height: 1.125rem;
+    /* 18px */
+    letter-spacing: 0;
+}
+
+.semibold-caption-s {
+    font-family: "Mulish", sans-serif;
+    font-weight: 500;
+    font-size: 0.6875rem;
+    /* 11px */
+    line-height: 1.125rem;
+    /* 18px */
+    letter-spacing: 0;
+}
+
+/* ===================== */
+/*          BOLD         */
+/* ===================== */
+
+.bold-body-l {
+    font-family: "Mulish", sans-serif;
+    font-weight: 700;
+    font-size: 1.3125rem;
+    /* 21px */
+    line-height: 2.125rem;
+    /* 34px */
+    letter-spacing: 0;
+}
+
+.bold-body-m {
+    font-family: "Mulish", sans-serif;
+    font-weight: 700;
+    font-size: 1.125rem;
+    /* 18px */
+    line-height: 1.75rem;
+    /* 28px */
+    letter-spacing: 0;
+}
+
+.bold-body-s {
+    font-family: "Mulish", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    /* 16px */
+    line-height: 1.5rem;
+    /* 24px */
+    letter-spacing: 0;
+}
+
+.bold-caption-l {
+    font-family: "Mulish", sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem;
+    /* 14px */
+    line-height: 1.25rem;
+    /* 20px */
+    letter-spacing: 0;
+}
+
+/* --- BUTTONS --- */
+.buttons {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0 0 0;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    position: relative;
+    isolation: isolate;
+    text-decoration: none;
+    transition:
+        background-color .1s ease,
+        color .1s ease,
+        opacity .1s ease;
+    --hover-overlay: var(--overlay-hover);
+    --pressed-overlay: var(--overlay-pressed);
+}
+
+.btn>* {
+    position: relative;
+    z-index: 1;
+}
+
+.btn:hover::after,
+.btn[data-state="hover"]::after {
+    opacity: 1;
+    background: var(--hover-overlay);
+}
+
+.btn:active::after,
+.btn[data-state="pressed"]::after {
+    opacity: 1;
+    background: var(--pressed-overlay);
+}
+
+.btn-container-primary,
+.btn-container-secondary,
+.btn-container-outline,
+.btn-container-ghost {
+    --hover-overlay: var(--overlay-container-hover);
+    --pressed-overlay: var(--overlay-container-pressed);
+}
+
+.btn:disabled,
+.btn[disabled],
+.btn[data-state="disabled"] {
+    opacity: .38;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.btn-tonal:is(:hover, :active),
+.btn-tonal[data-state="hover"],
+.btn-tonal[data-state="pressed"] {
+    background: var(--btn-primary);
+    color: var(--on-inverse-primary);
+}
+
+.btn-container-secondary:is(:hover, :active),
+.btn-container-secondary[data-state="hover"],
+.btn-container-secondary[data-state="pressed"] {
+    background: var(--btn-inverse);
+    color: var(--on-primary);
+}
+
+body.dark-mode .btn-tonal:is(:hover, :active),
+body.dark-mode .btn-tonal[data-state="hover"],
+body.dark-mode .btn-tonal[data-state="pressed"] {
+    background: var(--btn-primary);
+    color: var(--on-inverse-primary);
+}
+
+body.dark-mode .btn-container-secondary:is(:hover, :active),
+body.dark-mode .btn-container-secondary[data-state="hover"],
+body.dark-mode .btn-container-secondary[data-state="pressed"] {
+    background: var(--btn-inverse);
+    color: var(--on-primary);
+}
+
+/* ===== DARK MODE — Container preview (same HTML) ===== */
+
+body.dark-mode .btn-preview--container .container-surface {
+    --container-surface-bg: var(--container);
+}
+
+body.dark-mode .btn-preview--container .cell--head,
+body.dark-mode .btn-preview--container .cell--rowhead {
+    color: var(--on-primary);
+}
+
+body.dark-mode {
+    --overlay-container-hover: rgba(50, 40, 39, 0.20);
+    /* #322827 @ 20% */
+    --overlay-container-pressed: rgba(50, 40, 39, 0.40);
+    /* #322827 @ 40% */
+}
+
+body.dark-mode .btn-preview--container {
+    --brd-container: color-mix(in srgb, #322827 26%, transparent);
+}
+
+body.dark-mode .btn-preview--container .btn-container-secondary:is(:hover, :active),
+body.dark-mode .btn-preview--container .btn-container-secondary[data-state="hover"],
+body.dark-mode .btn-preview--container .btn-container-secondary[data-state="pressed"] {
+    background: var(--btn-inverse);
+    color: var(--on-primary);
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .1s ease;
+    z-index: 0;
+}
+
+.btn-primary {
+    background: var(--btn-primary);
+    color: var(--on-inverse-primary);
+}
+
+.btn-tonal {
+    color: var(--btn-primary, #FFC2A0);
+    background: color-mix(in srgb, var(--btn-primary) 20%, transparent);
+    text-decoration: none;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--btn-primary, #FFC2A0);
+    border-color: currentColor;
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--btn-primary, #FFC2A0);
+    text-decoration: none;
+}
+
+.btn-destructive {
+    background: var(--btn-error);
+    color: var(--on-layer-red);
+}
+
+/* On layer */
+.btn-container-primary {
+    background: var(--btn-inverse);
+    color: var(--on-primary);
+}
+
+.btn-container-secondary {
+    background: var(--btn-on-secondary);
+    color: var(--btn-inverse);
+}
+
+.btn-container-outline {
+    background: transparent;
+    color: var(--btn-inverse);
+    border: 1px solid var(--brd-container);
+}
+
+.btn-container-ghost {
+    background: transparent;
+    color: var(--on-inverse-primary);
+}
+
+body {
+    line-height: 1.45;
+    background: var(--surface);
+    color: var(--on-primary);
+    margin: 0;
+    font-family: var(--ff-sans);
+    font-weight: var(--w-sans-regular);
+}

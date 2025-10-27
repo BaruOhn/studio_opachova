@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="theme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <title>Studio Jana Opachová</title>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Přeskočit na obsah</a>
+
+    <!-- Sticky top navigation -->
+    <header class="navbar" data-transparent>
+        <div class="navbar__inner">
+            <a href="#home" class="brand">
+                <a href="#home" class="brand">
+                    <img id="brandLogo" class="brand__logo" src="assets/images/logo_light.png"
+                        data-logo-light="assets/images/logo_light.png" data-logo-dark="assets/images/logo_dark.png"
+                        alt="Logo studia" />
+                    <span class="brand__name serif-title">Studio Jana Opachová</span>
+                </a>
+            </a>
+
+            <button id="menu-toggle" class="menu-btn" aria-label="Otevřít menu" aria-controls="primary-nav"
+                aria-expanded="false">
+                <span class="menu-btn__bar" aria-hidden="true"></span>
+                <span class="menu-btn__bar" aria-hidden="true"></span>
+                <span class="menu-btn__bar" aria-hidden="true"></span>
+            </button>
+
+            <nav id="primary-nav" class="site-nav" role="navigation" aria-label="Hlavní">
+                <ul class="site-nav__list">
+                    <li><a class="site-nav__link serif-title" href="#home">O studiu</a></li>
+                    <li><a class="site-nav__link serif-title" href="#services">Služby</a></li>
+                    <li><a class="site-nav__link serif-title" href="#pricing">Ceník</a></li>
+                    <li><a class="site-nav__link serif-title" href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero">
+            <div class="hero__content">
+                <h1 class="serif-display-s">Studio Jana Opachová</h1>
+                <h2 class="serif-heading-s">Specialista na permanentní makeup</h2>
+                <div class="buttons">
+                    <a class="btn btn-tonal bold-body-s" href="#services"><span>Zjistit více</span></a>
+                    <a class="btn btn-primary bold-body-s" href="#contact"><span>Objednat termín</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="home" class="about section">
+            <div class="about__text">
+                <h2 class="semibold-heading-s">O studiu</h2>
+                <hr class="divider" aria-hidden="true" />
+                <p class="regular-body-m">
+                    Snažím se, abyste se u mě cítili co nejlépe – nabízím profesionální služby,
+                    individuální přístup a prostředí, které dýchá pohodou a harmonií.
+                </p>
+                <p class="regular-body-m">
+                    Pracuji s&nbsp;luxusní pečující kosmetikou BIODROGA a k&nbsp;permanentnímu makeupu
+                    přistupuji citlivě s&nbsp;důrazem na přirozenost.
+                </p>
+                <p class="regular-body-m">
+                    Těším se na vás – společně zvýrazníme vaši jedinečnou krásu.
+                </p>
+            </div>
+
+            <div class="about__media">
+                <figure class="about__item about__item--a">
+                    <img src="assets/images/studio5.png" alt="Mycí zóna a relaxační kout studia">
+                </figure>
+                <figure class="about__item about__item--b">
+                    <img src="assets/images/studio4.png" alt="Pracovní místo se zrcadlem ve dřevěném dekoru">
+                </figure>
+                <figure class="about__item about__item--c">
+                    <img src="assets/images/studio7.png" alt="Hlavní sál studia s pohodlnými křesly">
+                </figure>
+            </div>
+        </section>
+
+        <section id="services" class="section section--services">
+            <h2 class="semibold-heading-s">Služby</h2>
+            <hr class="divider" aria-hidden="true" />
+
+            <div class="services__grid">
+                <!-- karta 1 -->
+                <article class="service-card">
+                    <figure class="service-card__media">
+                        <img src="assets/images/beauty1.png" alt="Ukázka aplikace permanentního makeupu"
+                            loading="lazy" />
+                    </figure>
+                    <div class="service-card__body">
+                        <h3 class="bold-body-m service-card__title">Permanentní makeup</h3>
+                        <p class="regular-body-s service-card__desc">
+                            Přirozené zvýraznění rysů – obočí, oční linky i rty jemnými technikami s důrazem na
+                            šetrnost.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- karta 2 -->
+                <article class="service-card">
+                    <figure class="service-card__media">
+                        <img src="assets/images/beauty2.png" alt="Ukázka prodlužování a zahušťování řas"
+                            loading="lazy" />
+                    </figure>
+                    <div class="service-card__body">
+                        <h3 class="bold-body-m service-card__title">Prodlužování řas</h3>
+                        <p class="regular-body-s service-card__desc">
+                            Elegantní objem i délka na míru. Lehoučké a pohodlné nošení, které podtrhne pohled.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+
+        <section id="pricing" class="section">
+            <h2 class="semibold-heading-s">Ceník</h2>
+            <hr class="divider" aria-hidden="true" />
+
+            <ol class="price-table" role="list">
+                <li class="price-row">
+                    <span class="idx regular-body-s">1</span>
+                    <span class="title bold-body-s">Služba 1</span>
+                    <span class="price semibold-caption-l">700 – 1000 Kč</span>
+                </li>
+
+                <li class="price-row">
+                    <span class="idx regular-body-s">2</span>
+                    <span class="title bold-body-s">Služba 2</span>
+                    <span class="price semibold-caption-l">1000 – 1800 Kč</span>
+                </li>
+
+                <li class="price-row">
+                    <span class="idx regular-body-s">3</span>
+                    <span class="title bold-body-s">Služba 3</span>
+                    <span class="price semibold-caption-l">2000 – 3500 Kč</span>
+                </li>
+            </ol>
+        </section>
+
+
+        <section id="contact" class="contact-band">
+            <div class="contact__inner">
+                <!-- LEVÝ SLOUPEC -->
+                <div class="contact__left">
+                    <div class="contact__brand">
+                        <img class="contact__logo" src="assets/images/logo_dark.png" alt="Logo studia">
+                        <div>
+                            <div class="serif-title contact__brand-name">Studio Jana Opachová</div>
+                            <div class="regular-caption-m contact__brand-sub">Specialista na permanentní makeup</div>
+                        </div>
+                    </div>
+
+                    <hr class="divider" aria-hidden="true">
+
+                    <ul class="contact__list regular-body-m">
+                        <li>
+                            <span class="material-symbols-outlined" aria-hidden="true">call</span>
+                            <a href="tel:+420123456789" class="regular-body-s">+420&nbsp;123&nbsp;456&nbsp;789</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+                            <a href="mailto:info@studio-opachova.cz" class="regular-body-s">info@studio-opachova.cz</a>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined" aria-hidden="true">location_on</span>
+                            <address class="contact__addr regular-body-s">Sládkova, 702&nbsp;00 Moravská Ostrava a
+                                Přívoz</address>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
+                            <span class="regular-body-s">Po–Pá 9:00–18:00</span>
+                        </li>
+                    </ul>
+
+                    <div class="contact__actions">
+                        <a class="btn btn-tonal bold-body-s" target="_blank" rel="noopener"
+                            href="https://maps.google.com?q=Dlouhá%2012%20Praha"><span>Zobrazit na Mapě</span></a>
+                        <a class="btn btn-primary bold-body-s" href="mailto:info@studio-opachova.cz"><span>Napsat
+                                e-mail</span></a>
+                    </div>
+                </div>
+
+                <!-- PRAVÝ SLOUPEC – MAPA -->
+                <div class="contact__mapCard">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1580.7195155921104!2d18.271126673784046!3d49.83647029970188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4713e3257b545fd5%3A0x9f71e210039dfcdc!2sJana%20Opachov%C3%A1!5e0!3m2!1scs!2scz!4v1761576281667!5m2!1scs!2scz"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer regular-caption-m">
+        <p>&copy; 2025 Studio Opachová</p>
+    </footer>
+
+    <script>
+        // ——— Sticky nav background + text color swap + logo swap
+        const header = document.querySelector('.navbar');
+        const logoEl = document.getElementById('brandLogo');
+
+        function setLogo(isSolid) {
+            if (!logoEl) return;
+            const nextSrc = isSolid
+                ? logoEl.dataset.logoDark
+                : logoEl.dataset.logoLight;
+
+            if (logoEl.src.endsWith(nextSrc)) return;
+
+            logoEl.classList.add('is-swapping');
+            const onLoad = () => {
+                logoEl.classList.remove('is-swapping');
+                logoEl.removeEventListener('load', onLoad);
+            };
+            logoEl.addEventListener('load', onLoad);
+            logoEl.src = nextSrc;
+        }
+
+        const onScroll = () => {
+            const solid = window.scrollY > 16;
+            if (solid) {
+                header.classList.add('is-solid');
+                header.removeAttribute('data-transparent');
+            } else {
+                header.classList.remove('is-solid');
+                header.setAttribute('data-transparent', '');
+            }
+            setLogo(solid);
+        };
+
+        document.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        const btn = document.getElementById('menu-toggle');
+        const nav = document.getElementById('primary-nav');
+        btn.addEventListener('click', () => {
+            const open = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!open));
+            nav.toggleAttribute('data-open');
+            document.body.classList.toggle('nav-open', !open);
+        });
+        nav.addEventListener('click', (e) => {
+            if (e.target.matches('a')) {
+                btn.setAttribute('aria-expanded', 'false');
+                nav.removeAttribute('data-open');
+                document.body.classList.remove('nav-open');
+            }
+        });
+    </script>
+</body>
+
+</html>
