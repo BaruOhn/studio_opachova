@@ -7,7 +7,6 @@
 
 html {
     scroll-behavior: smooth;
-    /* kompenzace za fixed header */
     scroll-padding-top: 72px;
 }
 
@@ -24,7 +23,6 @@ img {
     height: auto;
 }
 
-/* Přístupnost: skip link */
 .skip-link {
     position: absolute;
     left: -9999px;
@@ -158,7 +156,7 @@ img {
     text-underline-offset: .3em;
 }
 
-/* --- HERO sekce pro kontrast s průhledným navem --- */
+/* --- HERO sekce --- */
 .hero {
     min-height: 100svh;
     display: grid;
@@ -296,7 +294,10 @@ img {
 }
 
 .service-card__body {
-    padding: 1.5rem 1.125rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.25rem 1.5rem;
 }
 
 .service-card__title {
@@ -305,8 +306,321 @@ img {
 }
 
 .service-card__desc {
-    margin: 0;
+    margin: 0 0 1rem 0;
     color: var(--on-secondary);
+}
+
+.service-card__note {
+    color: var(--btn-primary);
+    background-color: var(--btn-premium);
+    border-radius: 999px;
+    padding: .5rem 1rem;
+    display: inline-block;
+    font-size: .875rem;
+    margin-top: auto;
+    width: fit-content;
+}
+
+/* ===== MODALS ===== */
+.modal[hidden] {
+    display: none;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(17, 17, 17, .5);
+    backdrop-filter: blur(2px);
+}
+
+.modal__dialog {
+    position: relative;
+    width: min(640px, calc(100vw - 48px));
+    height: min(80vh, 660px);
+    background: var(--level-1);
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, .25);
+    padding: 2.5rem;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal__header {
+    flex: 0 0 auto;
+}
+
+.modal__header h2 {
+    margin: 0 .25rem;
+    text-align: center;
+}
+
+.modal__header p {
+    color: var(--on-secondary);
+    margin: .5rem .25rem 2rem;
+    text-align: center;
+}
+
+.modal__brand{
+  display: block;
+  width: min(180px, 60%);
+  height: auto;
+  margin: .75rem auto 1rem;  
+  opacity: .9;
+  filter: saturate(1.05);
+}
+
+.modal__close {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    border: 0;
+    background: transparent;
+    font-size: 1.25rem;
+    line-height: 1;
+    padding: .5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--on-tertiary);
+}
+
+.modal__body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+}
+
+.modal__footer {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap: .5rem;
+    flex: 0 0 auto;
+    margin-top: auto;
+}
+
+.modal-form {
+    display: grid;
+}
+
+.modal-form__field span {
+    display: block;
+    font-weight: 600;
+    margin: .35rem 0;
+}
+
+.modal-form__field textarea,
+.modal-form__field select,
+.modal-form__field input {
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid var(--brd-muted);
+    background: var(--input-bg);
+    padding: .75rem .85rem;
+    font: inherit;
+    color: var(--on-tertiary);
+}
+
+.modal-form__field select {
+    padding: 0.75rem .85rem;
+}
+
+.body--modal-open {
+    overflow: hidden;
+}
+
+.library {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.library__divider {
+    border: 0;
+    border-top: 1px solid var(--brd-muted);
+    margin: 0;
+}
+
+.quote-tabs {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+}
+
+.tabs__tab {
+    position: relative;
+    padding: .5rem .25rem;
+    border: 0;
+    background: transparent;
+    font: inherit;
+    cursor: pointer;
+    color: var(--on-secondary);
+}
+
+.tabs__tab[aria-selected="true"] {
+    color: var(--on-primary);
+}
+
+.tabs__tab[aria-selected="true"]::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 100%;
+    background: var(--on-primary);
+    border-radius: 999px;
+}
+
+.panels {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: auto;
+    padding-right: .25rem;
+}
+
+.library-list {
+    list-style: none;
+    padding: .75rem 0 0;
+    margin: 0;
+}
+
+.library-list li+li {
+    margin-top: .75rem;
+}
+
+.quote-item {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: 0;
+    padding: .5rem .25rem;
+    cursor: pointer;
+    border-radius: 8px;
+    color: var(--on-secondary)
+}
+
+.quote-item:hover,
+.quote-item:focus-visible {
+    background: rgba(0, 0, 0, .04);
+    outline: none;
+}
+
+.quote-item__text {
+    display: block;
+    color: var(--on-secondary);
+}
+
+.quote-item__author {
+    display: block;
+    margin-top: .25rem;
+    font-size: .9rem;
+    color: var(--on-tertiary);
+}
+
+.quote-item.is-selected {
+    background: rgba(0, 0, 0, .06);
+}
+
+.modal-buttons {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.btn-group-right {
+    display: flex;
+    gap: .5rem;
+}
+
+.btn-danger {
+    color: var(--btn-error);
+}
+
+/* === TREATMENT MODAL UI === */
+.treatment-layout {
+    display: grid;
+    gap: 1rem;
+}
+
+@media (min-width: 720px) {
+    .treatment-layout {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+
+    .treatment-price {
+        grid-column: 1 / -1;
+    }
+}
+
+.treatment-block {
+    background: var(--on-level-10);
+    border: 1px solid var(--brd-muted);
+    border-radius: .75rem;
+    padding: 1rem;
+}
+
+.treatment-block__title {
+    margin: 0 0 .75rem 0;
+    color: var(--on-primary);
+}
+
+.treatment-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+}
+
+.treatment-list li {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: .5rem;
+    align-items: start;
+    padding: .25rem;
+    border-radius: .5rem;
+}
+
+.treatment-list li:hover {
+    background: color-mix(in srgb, var(--brd-muted) 45%, transparent);
+}
+
+.treatment-list .material-symbols-outlined {
+    font-size: 20px;
+    line-height: 1;
+    color: var(--on-tertiary);
+    margin-top: 2px;
+}
+
+/* Cena – výrazný box */
+.treatment-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--btn-premium);
+    color: var(--btn-primary);
+    border: 1px solid var(--brd-muted);
+    border-radius: .75rem;
+    padding: 1rem;
+}
+
+.treatment-price__left p {
+   margin: 0;
 }
 
 /* ===== PRICING ===== */
@@ -486,11 +800,6 @@ img {
     min-height: 370px;
     aspect-ratio: 16 / 9;
     border: 0;
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    filter: grayscale(100%);
 }
 
 /* --- Footer --- */
@@ -552,7 +861,6 @@ img {
     }
 
     .navbar[data-transparent] .site-nav__list {
-        /* Když je transparentní hlavička, mobilní menu má mít čitelné pozadí */
         background: color-mix(in srgb, var(--surface) 92%, transparent);
         backdrop-filter: blur(6px);
     }

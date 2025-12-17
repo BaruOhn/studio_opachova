@@ -57,6 +57,7 @@
             </div>
         </section>
 
+        <!-- O STUDIU -->
         <section id="home" class="about section">
             <div class="about__text">
                 <h2 class="semibold-heading-s">O studiu</h2>
@@ -76,7 +77,7 @@
 
             <div class="about__media">
                 <figure class="about__item about__item--a">
-                    <img src="assets/images/studio5.png" alt="Mycí zóna a relaxační kout studia">
+                    <img src="assets/images/studio1.png" alt="Mycí zóna a relaxační kout studia">
                 </figure>
                 <figure class="about__item about__item--b">
                     <img src="assets/images/studio4.png" alt="Pracovní místo se zrcadlem ve dřevěném dekoru">
@@ -87,69 +88,275 @@
             </div>
         </section>
 
+        <!-- SLUŽBY -->
         <section id="services" class="section section--services">
             <h2 class="semibold-heading-s">Služby</h2>
             <hr class="divider" aria-hidden="true" />
 
             <div class="services__grid">
                 <!-- karta 1 -->
-                <article class="service-card">
+                <article class="service-card" data-modal-target="#modal-treatment">
                     <figure class="service-card__media">
                         <img src="assets/images/beauty1.png" alt="Ukázka aplikace permanentního makeupu"
                             loading="lazy" />
                     </figure>
                     <div class="service-card__body">
-                        <h3 class="bold-body-m service-card__title">Permanentní makeup</h3>
+                        <h3 class="bold-body-m service-card__title">Kosmetické ošetření</h3>
                         <p class="regular-body-s service-card__desc">
-                            Přirozené zvýraznění rysů – obočí, oční linky i rty jemnými technikami s důrazem na
-                            šetrnost.
+                            Ošetření zaměřené na hydrataci, výživu, lifting, při použití speciálního zábalu a masek s
+                            výrazným pocitovým i vizuálním efektem s masáží.
                         </p>
+                        <span class="service-card__note regular-caption-l">Délka ošetření 1 hodina 40 minut</span>
                     </div>
                 </article>
 
                 <!-- karta 2 -->
-                <article class="service-card">
+                <article class="service-card" data-modal-target="#modal-permanent-makeup">
                     <figure class="service-card__media">
                         <img src="assets/images/beauty2.png" alt="Ukázka prodlužování a zahušťování řas"
                             loading="lazy" />
                     </figure>
                     <div class="service-card__body">
-                        <h3 class="bold-body-m service-card__title">Prodlužování řas</h3>
+                        <h3 class="bold-body-m service-card__title">Permanentí makeup</h3>
                         <p class="regular-body-s service-card__desc">
-                            Elegantní objem i délka na míru. Lehoučké a pohodlné nošení, které podtrhne pohled.
+                            Precizní aplikace permanentního makeupu pro zvýraznění přirozené krásy obočí, očí a rtů.
+                            Využívám nejmodernější techniky a kvalitní pigmenty pro dlouhotrvající a přirozený vzhled.
                         </p>
+                        <span class="service-card__note regular-caption-l">Délka ošetření 1 hodina 30 minut</span>
                     </div>
                 </article>
             </div>
         </section>
 
+        <!-- MODÁLNÍ OKNA -->
+        <!-- MODÁL: Permanentní make-up -->
+        <div class="modal" id="modal-permanent-makeup" role="dialog" aria-modal="true" aria-labelledby="pmu-title"
+            hidden>
+            <div class="modal__backdrop" data-modal-close></div>
 
+            <div class="modal__dialog" role="document" aria-describedby="pmu-tabs">
+                <button class="modal__close" type="button" aria-label="Zavřít" data-modal-close>✕</button>
+
+                <header class="modal__header">
+                    <h2 id="pmu-title" class="serif-heading-m">Permanentní make-up</h2>
+                    <p class="regular-caption-l">
+                        Permanentní make-up prošel v ČR dlouholetým vývojem. Provádí se u nás od roku 1991.
+                        Já pracuji s permanentním make-up od roku 1993. Mám to štěstí být tudíž u celého vývoje,
+                        jak technologie aplikace, tak vývoje barev pigmentů, které jsou kvalitou a barevnými odstíny
+                        nesrovnatelné se začátky. Pro dokonalost odstínu používám míchání barev přímo v pokožce.
+                    </p>
+                    <img class="modal__brand" src="assets/images/purebeau.png" alt="Purebeau" loading="lazy" />
+                </header>
+
+                <div class="pmu" id="pmu-tabs" data-tabs>
+                    <!-- Taby -->
+                    <div class="quote-tabs regular-body-s" role="tablist" aria-label="Oblasti permanentního make-upu">
+                        <button role="tab" aria-selected="true" aria-controls="panel-lips" id="tab-lips"
+                            class="tabs__tab">Rty</button>
+
+                        <button role="tab" aria-selected="false" aria-controls="panel-eyes" id="tab-eyes"
+                            class="tabs__tab">Oči</button>
+
+                        <button role="tab" aria-selected="false" aria-controls="panel-brows" id="tab-brows"
+                            class="tabs__tab">Obočí</button>
+                    </div>
+
+                    <hr class="library__divider" aria-hidden="true">
+
+                    <!-- Panely -->
+                    <div class="panels">
+                        <!-- RTY -->
+                        <section id="panel-lips" role="tabpanel" aria-labelledby="tab-lips">
+                            <p class="regular-body-s">
+                                Vhodným odstínem pigmentu lze oživit ztrácející se přirozené kontury rtů,
+                                mírné korekce povislých ústních koutků, minimální zvětšení a jiné nerovnosti.
+                                Zahrnuje také výplň rtů, které získají svěží vzhled. Stačí pak jen nalíčit lehce
+                                tónovaným nebo bezbarvým leskem.
+                            </p>
+                        </section>
+
+                        <!-- OČI -->
+                        <section id="panel-eyes" role="tabpanel" aria-labelledby="tab-eyes" hidden>
+                            <p class="regular-body-s">
+                                Oční „linka“ není linka v pravém slova smyslu, jen jemně, ale výrazně kopíruje
+                                horní linii řas, je slušivá a prozáří každé oko. Spodní „linka“ je jemně
+                                vystínovaná. Obojí linky působí spíš jako zhuštěné kořínky řas. Výsledkem je
+                                projasněný výraz očí a čistá přesná práce. Vhodné také pro citlivé oči a
+                                pro oči alergické na líčidla.
+                            </p>
+                        </section>
+
+                        <!-- OBOČÍ -->
+                        <section id="panel-brows" role="tabpanel" aria-labelledby="tab-brows" hidden>
+                            <p class="regular-body-s">
+                                Po nanesení anestetika provedeme předkreslení tvaru, eventuálně lehké
+                                korigování tvaru obočí, doplnění prázdných míst, protažení či zvednutí obočí.
+                                Vše je naprosto individuální a šité na míru každé klientce. Pro dokonalost odstínu
+                                používám míchání barev přímo v pokožce. Korekce červeného a modrého obočí.
+                                Ve výsledku kladu velký důraz na přirozený výraz a vždy vycházím z přirozeného tvaru
+                                obočí, které dokresluje výraz tváře a nemělo by se stát dominantou při pohledu
+                                na celkový dojem obličeje. Touto konzultací se i Vy stáváte spolutvůrci
+                                permanentního make-upu obočí.
+                            </p>
+                        </section>
+                    </div>
+                </div>
+
+                <footer class="modal__footer modal-buttons">
+                    <button class="btn btn-ghost bold-body-s" type="button" data-modal-close>
+                        <span>Zavřít</span>
+                    </button>
+                    <button class="btn btn-primary bold-body-s" type="button" data-scroll-contact>
+                        <span>Objednat se</span>
+                    </button>
+                </footer>
+            </div>
+        </div>
+
+        <!-- MODÁL: Kosmetické ošetření -->
+        <div class="modal" id="modal-treatment" role="dialog" aria-modal="true" aria-labelledby="treat-title" hidden>
+            <div class="modal__backdrop" data-modal-close></div>
+
+            <div class="modal__dialog" role="document">
+                <button class="modal__close" type="button" aria-label="Zavřít" data-modal-close>✕</button>
+
+                <header class="modal__header">
+                    <h2 id="treat-title" class="serif-heading-m">Kosmetické ošetření</h2>
+                    <p class="regular-caption-l">
+                        Kompletní ošetření zaměřené na čistotu, výživu a uvolnění pleti.
+                    </p>
+                </header>
+
+                <div class="panels">
+                    <div class="treatment-layout">
+                        <!-- Průběh -->
+                        <section class="treatment-block" aria-labelledby="treat-steps-title">
+                            <h3 id="treat-steps-title" class="bold-body-m treatment-block__title">Ošetření zahrnuje</h3>
+
+                            <ul class="treatment-list regular-body-s">
+                                <li><span class="material-symbols-outlined"
+                                        aria-hidden="true">check</span><span>Povrchové čistění</span></li>
+                                <li><span class="material-symbols-outlined"
+                                        aria-hidden="true">check</span><span>Peeling</span></li>
+                                <li><span class="material-symbols-outlined" aria-hidden="true">check</span><span>Hluboké
+                                        čištění</span></li>
+                                <li><span class="material-symbols-outlined"
+                                        aria-hidden="true">check</span><span>Aplikace koncentrátu</span></li>
+                                <li><span class="material-symbols-outlined" aria-hidden="true">check</span><span>Masáž
+                                        dekoltu</span></li>
+                                <li><span class="material-symbols-outlined" aria-hidden="true">check</span><span>Masáž
+                                        obličeje</span></li>
+                                <li><span class="material-symbols-outlined"
+                                        aria-hidden="true">check</span><span>Aplikace masky</span></li>
+                            </ul>
+                        </section>
+
+                        <!-- V ceně navíc -->
+                        <section class="treatment-block" aria-labelledby="treat-extra-title">
+                            <h3 id="treat-extra-title" class="bold-body-m treatment-block__title">Do ošetření spadá také
+                            </h3>
+
+                            <ul class="treatment-list regular-body-s">
+                                <li><span class="material-symbols-outlined" aria-hidden="true">add</span><span>Úprava
+                                        obočí</span></li>
+                                <li><span class="material-symbols-outlined" aria-hidden="true">add</span><span>Barvení
+                                        obočí</span></li>
+                                <li><span class="material-symbols-outlined" aria-hidden="true">add</span><span>Barvení
+                                        řas</span></li>
+                                <li><span class="material-symbols-outlined" aria-hidden="true">add</span><span>Základní
+                                        depilace voskem</span></li>
+                            </ul>
+                        </section>
+
+                        <!-- Cena -->
+                        <section class="treatment-price" aria-label="Cena ošetření">
+                            <div class="treatment-price__left">
+                                <p class="regular-caption-l">Cena</p>
+                                <p class="bold-body-m">1600 Kč</p>
+                            </div>
+
+                            <p class="regular-caption-m">zahrnuje vše</p>
+                        </section>
+                    </div>
+                </div>
+
+                <footer class="modal__footer modal-buttons">
+                    <button class="btn btn-ghost bold-body-s" type="button" data-modal-close>
+                        <span>Zavřít</span>
+                    </button>
+                    <button class="btn btn-primary bold-body-s" type="button" data-scroll-contact>
+                        <span>Objednat se</span>
+                    </button>
+                </footer>
+            </div>
+        </div>
+
+
+        <!-- CENÍK -->
         <section id="pricing" class="section">
             <h2 class="semibold-heading-s">Ceník</h2>
             <hr class="divider" aria-hidden="true" />
 
             <ol class="price-table" role="list">
+                <h3 class="bold-body-m price-table__title">Permanentní makeup</h3>
                 <li class="price-row">
                     <span class="idx regular-body-s">1</span>
-                    <span class="title bold-body-s">Služba 1</span>
-                    <span class="price semibold-caption-l">700 – 1000 Kč</span>
+                    <span class="title bold-body-s">Obočí</span>
+                    <span class="price semibold-body-s">3150 Kč</span>
                 </li>
 
                 <li class="price-row">
                     <span class="idx regular-body-s">2</span>
-                    <span class="title bold-body-s">Služba 2</span>
-                    <span class="price semibold-caption-l">1000 – 1800 Kč</span>
+                    <span class="title bold-body-s">Korekce obočí</span>
+                    <span class="price semibold-body-s">500 Kč</span>
                 </li>
 
                 <li class="price-row">
                     <span class="idx regular-body-s">3</span>
-                    <span class="title bold-body-s">Služba 3</span>
-                    <span class="price semibold-caption-l">2000 – 3500 Kč</span>
+                    <span class="title bold-body-s">Horní linky</span>
+                    <span class="price semibold-body-s">2850 Kč</span>
+                </li>
+
+                <li class="price-row">
+                    <span class="idx regular-body-s">4</span>
+                    <span class="title bold-body-s">Korekce horních linek</span>
+                    <span class="price semibold-body-s">500 Kč</span>
+                </li>
+
+                <li class="price-row">
+                    <span class="idx regular-body-s">5</span>
+                    <span class="title bold-body-s">Spodní linky</span>
+                    <span class="price semibold-body-s">2850 Kč</span>
+                </li>
+
+                <li class="price-row">
+                    <span class="idx regular-body-s">6</span>
+                    <span class="title bold-body-s">Korekce spodních linek</span>
+                    <span class="price semibold-body-s">500 Kč</span>
+                </li>
+
+                <li class="price-row">
+                    <span class="idx regular-body-s">7</span>
+                    <span class="title bold-body-s">Rty</span>
+                    <span class="price semibold-body-s">4850 Kč</span>
+                </li>
+
+                <li class="price-row">
+                    <span class="idx regular-body-s">8</span>
+                    <span class="title bold-body-s">Korekce rtů</span>
+                    <span class="price semibold-body-s">850 Kč</span>
+                </li>
+
+                <h3 class="bold-body-m price-table__title">Kosmetické ošetření</h3>
+                <li class="price-row">
+                    <span class="idx regular-body-s">9</span>
+                    <span class="title bold-body-s">Kosmetické ošetření</span>
+                    <span class="price semibold-body-s">1 600 Kč</span>
                 </li>
             </ol>
         </section>
 
-
+        <!-- KONTAKT -->
         <section id="contact" class="contact-band">
             <div class="contact__inner">
                 <!-- LEVÝ SLOUPEC -->
@@ -178,10 +385,6 @@
                             <address class="contact__addr regular-body-s">Sládkova, 702&nbsp;00 Moravská Ostrava a
                                 Přívoz</address>
                         </li>
-                        <li>
-                            <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-                            <span class="regular-body-s">Po–Pá 9:00–18:00</span>
-                        </li>
                     </ul>
 
                     <div class="contact__actions">
@@ -207,59 +410,7 @@
         <p>&copy; 2025 Studio Opachová</p>
     </footer>
 
-    <script>
-        // ——— Sticky nav background + text color swap + logo swap
-        const header = document.querySelector('.navbar');
-        const logoEl = document.getElementById('brandLogo');
-
-        function setLogo(isSolid) {
-            if (!logoEl) return;
-            const nextSrc = isSolid
-                ? logoEl.dataset.logoDark
-                : logoEl.dataset.logoLight;
-
-            if (logoEl.src.endsWith(nextSrc)) return;
-
-            logoEl.classList.add('is-swapping');
-            const onLoad = () => {
-                logoEl.classList.remove('is-swapping');
-                logoEl.removeEventListener('load', onLoad);
-            };
-            logoEl.addEventListener('load', onLoad);
-            logoEl.src = nextSrc;
-        }
-
-        const onScroll = () => {
-            const solid = window.scrollY > 16;
-            if (solid) {
-                header.classList.add('is-solid');
-                header.removeAttribute('data-transparent');
-            } else {
-                header.classList.remove('is-solid');
-                header.setAttribute('data-transparent', '');
-            }
-            setLogo(solid);
-        };
-
-        document.addEventListener('scroll', onScroll, { passive: true });
-        onScroll();
-
-        const btn = document.getElementById('menu-toggle');
-        const nav = document.getElementById('primary-nav');
-        btn.addEventListener('click', () => {
-            const open = btn.getAttribute('aria-expanded') === 'true';
-            btn.setAttribute('aria-expanded', String(!open));
-            nav.toggleAttribute('data-open');
-            document.body.classList.toggle('nav-open', !open);
-        });
-        nav.addEventListener('click', (e) => {
-            if (e.target.matches('a')) {
-                btn.setAttribute('aria-expanded', 'false');
-                nav.removeAttribute('data-open');
-                document.body.classList.remove('nav-open');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
