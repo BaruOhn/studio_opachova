@@ -599,3 +599,20 @@ body {
     font-family: var(--ff-sans);
     font-weight: var(--w-sans-regular);
 }
+
+@media (max-width: 660px) {
+    .serif-display-s {
+        font-size: 3.25rem;
+        line-height: 1.2;
+    }
+
+    .serif-heading-s {
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+    }
+
+    .serif-heading-m {
+        font-size: 2rem;
+        line-height: 2.75rem;
+    }
+}

@@ -5,13 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const header = document.querySelector('.navbar');
     const logoEl = document.getElementById('brandLogo');
 
+    let menuOpen = false; // <-- přidáno
+
     function setLogo(isSolid) {
         if (!logoEl) return;
 
-        const nextSrc = isSolid
-            ? logoEl.dataset.logoDark
-            : logoEl.dataset.logoLight;
-
+        const nextSrc = isSolid ? logoEl.dataset.logoDark : logoEl.dataset.logoLight;
         if (logoEl.src.endsWith(nextSrc)) return;
 
         logoEl.classList.add('is-swapping');
@@ -23,19 +22,26 @@ document.addEventListener('DOMContentLoaded', function () {
         logoEl.src = nextSrc;
     }
 
-    if (header) {
-        const onScroll = () => {
-            const solid = window.scrollY > 16;
-            if (solid) {
-                header.classList.add('is-solid');
-                header.removeAttribute('data-transparent');
-            } else {
-                header.classList.remove('is-solid');
-                header.setAttribute('data-transparent', '');
-            }
-            setLogo(solid);
-        };
+    function applyHeaderState(solid) { // <-- přidáno (společná logika)
+        if (!header) return;
 
+        if (solid) {
+            header.classList.add('is-solid');
+            header.removeAttribute('data-transparent');
+        } else {
+            header.classList.remove('is-solid');
+            header.setAttribute('data-transparent', '');
+        }
+        setLogo(solid);
+    }
+
+    function onScroll() { // <-- uděláno jako funkce dostupná i pro menu
+        if (menuOpen) return; // <-- když je menu otevřené, header držíme "solid"
+        const solid = window.scrollY > 16;
+        applyHeaderState(solid);
+    }
+
+    if (header) {
         document.addEventListener('scroll', onScroll, { passive: true });
         onScroll();
     }
@@ -43,23 +49,35 @@ document.addEventListener('DOMContentLoaded', function () {
     // ================================
     // MOBILNÍ MENU
     // ================================
-    const btn = document.getElementById('menu-toggle');
-    const nav = document.getElementById('primary-nav');
+    const btn = document.getElementById("menu-toggle");
+    const nav = document.getElementById("primary-nav");
+    const icon = btn?.querySelector(".menu-btn__icon");
+    const backdrop = document.querySelector("[data-nav-backdrop]");
 
-    if (btn && nav) {
-        btn.addEventListener('click', () => {
-            const open = btn.getAttribute('aria-expanded') === 'true';
-            btn.setAttribute('aria-expanded', String(!open));
-            nav.toggleAttribute('data-open');
-            document.body.classList.toggle('nav-open', !open);
+    if (btn && nav && icon) {
+        const setOpen = (open) => {
+            menuOpen = open; 
+
+            btn.setAttribute("aria-expanded", String(open));
+            btn.setAttribute("aria-label", open ? "Zavřít menu" : "Otevřít menu");
+            icon.textContent = open ? "close" : "menu";
+
+            if (open) {
+                nav.setAttribute("data-open", "");
+                applyHeaderState(true); 
+            } else {
+                nav.removeAttribute("data-open");
+                onScroll(); 
+            }
+        };
+
+        btn.addEventListener("click", () => {
+            const isOpen = btn.getAttribute("aria-expanded") === "true";
+            setOpen(!isOpen);
         });
 
-        nav.addEventListener('click', (e) => {
-            if (e.target.matches('a')) {
-                btn.setAttribute('aria-expanded', 'false');
-                nav.removeAttribute('data-open');
-                document.body.classList.remove('nav-open');
-            }
+        nav.addEventListener("click", (e) => {
+            if (e.target.closest("a")) setOpen(false);
         });
     }
 

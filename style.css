@@ -69,14 +69,16 @@ img {
 }
 
 .navbar__inner {
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0 1rem;
 }
 
-/* Značka */
 .brand {
     display: inline-flex;
     align-items: center;
@@ -104,32 +106,21 @@ img {
 /* Menu button (mobil) */
 .menu-btn {
     display: none;
-    -webkit-tap-highlight-color: transparent;
-    background: transparent;
-    border: 1px solid var(--brd-muted);
-    border-radius: .5rem;
     width: 44px;
-    height: 40px;
+    height: 44px;
+    border-radius: 999px;
+
+    border: 1px solid var(--brd-muted);
+    background: color-mix(in srgb, currentColor 10%, transparent);
+
     align-items: center;
     justify-content: center;
     cursor: pointer;
 }
 
-.menu-btn__bar {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background: currentColor;
-    position: relative;
-}
-
-.menu-btn__bar+.menu-btn__bar {
-    margin-top: 5px;
-}
-
-/* Primární navigace */
-.site-nav {
-    margin-left: auto;
+.menu-btn__icon {
+    font-size: 24px;
+    line-height: 1;
 }
 
 .site-nav__list {
@@ -177,6 +168,7 @@ img {
 .hero__content {
     max-width: 900px;
     text-align: center;
+    margin: 0 1rem;
 }
 
 .hero .buttons {
@@ -242,14 +234,13 @@ img {
 
 .about__item--c {
     grid-area: c;
-    aspect-ratio: 3 / 4;
 }
 
 /* --- Sekce --- */
 .section {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 4rem 1rem 0;
+    padding: 4rem 2rem 0;
 }
 
 .section--light {
@@ -367,17 +358,17 @@ img {
 
 .modal__header p {
     color: var(--on-secondary);
-    margin: .5rem .25rem 2rem;
+    margin: .5rem .25rem 1rem;
     text-align: center;
 }
 
-.modal__brand{
-  display: block;
-  width: min(180px, 60%);
-  height: auto;
-  margin: .75rem auto 1rem;  
-  opacity: .9;
-  filter: saturate(1.05);
+.modal__brand {
+    display: block;
+    width: min(180px, 60%);
+    height: auto;
+    margin: .75rem auto 1rem;
+    opacity: .9;
+    filter: saturate(1.05);
 }
 
 .modal__close {
@@ -620,7 +611,7 @@ img {
 }
 
 .treatment-price__left p {
-   margin: 0;
+    margin: 0;
 }
 
 /* ===== PRICING ===== */
@@ -703,7 +694,7 @@ img {
 .contact__inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 2rem;
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
     gap: 2rem;
@@ -827,10 +818,9 @@ img {
     }
 }
 
-@media (max-width: 920px) {
+@media (max-width: 940px) {
     .menu-btn {
         display: inline-flex;
-        color: currentColor;
     }
 
     .site-nav {
@@ -853,11 +843,10 @@ img {
     .site-nav__list {
         flex-direction: column;
         align-items: stretch;
-        margin: .5rem 1rem 0;
         background: var(--surface);
-        border: 1px solid var(--brd-muted);
-        border-radius: .75rem;
-        padding: .5rem;
+        border-bottom: 1px solid var(--brd-muted);
+        border-radius: 0 0 .75rem .75rem;
+        padding: 1rem .5rem;
     }
 
     .navbar[data-transparent] .site-nav__list {
@@ -866,12 +855,11 @@ img {
     }
 
     .site-nav__link {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
         padding: .75rem .75rem;
         border-radius: .5rem;
-    }
-
-    .hero {
-        padding-top: 8.5rem;
     }
 
     .services__grid {
@@ -884,9 +872,102 @@ img {
         width: min(72vw, 760px);
         opacity: 0.8;
     }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .about__text p {
+        max-width: 100%;
+    }
+
+    .about__media {
+        margin-top: 0;
+    }
+
+    .modal {
+        align-items: flex-end;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .modal__dialog {
+        width: 100%;
+        height: 90svh;
+        max-height: 90svh;
+        border-radius: 16px 16px 0 0;
+        padding: 1.25rem 1rem calc(1rem + env(safe-area-inset-bottom));
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modal__header {
+        flex: 0 0 auto;
+    }
+
+    .modal__footer {
+        flex: 0 0 auto;
+    }
+
+    .panels {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow: auto;
+        margin-bottom: 2rem;
+    }
+
+    .panels section {
+        margin: 0 0.5rem;
+    }
+
+    .pmu {
+        flex: 1 1 auto;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .modal__header h2 {
+        margin-top: 1rem;
+    }
+
+    .treatment-price {
+        margin-bottom: 2rem;
+    }
+
+    .library__divider {
+        margin: 0 0.5rem;
+    }
+
+    .contact__inner {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .contact__mapCard {
+        order: 2;
+    }
+
+    .contact__left {
+        order: 1;
+    }
+
+    .contact__actions {
+        display: none;
+    }
+
+    .contact-band {
+        margin-top: 6rem;
+    }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 660px) {
+    .hero .buttons {
+        flex-direction: column;
+        margin: 2rem 1rem 0;
+    }
+
     .price-row {
         grid-template-columns: 2ch 1fr;
         grid-template-areas:
@@ -915,6 +996,10 @@ img {
         width: 100vw;
         opacity: 0.8;
     }
+
+    .price-table::after {
+        display: none;
+    }
 }
 
 .navbar[data-transparent] {
@@ -923,4 +1008,9 @@ img {
 
 .navbar.is-solid {
     color: var(--on-primary);
+}
+
+html,
+body {
+    overflow-x: clip;
 }
