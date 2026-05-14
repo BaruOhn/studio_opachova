@@ -769,6 +769,11 @@ img {
     color: var(--on-tertiary);
 }
 
+.contact__icon {
+    color: var(--on-tertiary);
+    flex-shrink: 0;
+}
+
 .contact__actions {
     display: flex;
     gap: .75rem;
